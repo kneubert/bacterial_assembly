@@ -46,7 +46,8 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 
 ### **2. Run the assembly pipeline**
 To run a single sample call the pipeline script with the sampleId, read directory and species as parameter
-***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis'    
+***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis'   
+
 It is useful to write all outputs to a log file:
 ***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
 
@@ -54,6 +55,7 @@ To run multiple samples, just create a bash script file like '**jobs**' and sour
 ***assembly_pipeline_SPAdes.sh*** 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
 ***assembly_pipeline_SPAdes.sh*** 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log   
 ***assembly_pipeline_SPAdes.sh*** FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log   
+
 source **jobs**   
 
 After the runs have finished start the multiQC script in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC)
