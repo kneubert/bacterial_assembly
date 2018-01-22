@@ -1,0 +1,4 @@
+src=~/scripts/assembly_pipeline
+$src/assembly_pipeline_SPAdes.sh 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log
+$src/assembly_pipeline_SPAdes.sh 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log
+$src/assembly_pipeline_SPAdes.sh FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log
