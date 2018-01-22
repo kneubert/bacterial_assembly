@@ -3,7 +3,7 @@ Assembly pipeline for baterial isolates using SPAdes
 
 ## Installation
 Download the zip file or clone it with  <br />
-git clone https://github.com/kneubert/assembly_pipeline SRC_PATH/assembly_pipeline <br />
+git clone https://github.com/kneubert/bacterial_assembly SRC_PATH/assembly_pipeline <br />
 
 Put the pipeline in your PATH, e.g. <br />
 export PATH=SRC_PATH/assembly_pipeline <br />
