@@ -48,7 +48,7 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 To run a single sample call the pipeline script with the sampleId, read directory and species as parameter
 ***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis'   
 
-It is useful to write all outputs to a log file:
+It can be useful to write all outputs to a log file:   
 ***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
 
 To run multiple samples, just create a bash script file like '**jobs**' and source it:   
