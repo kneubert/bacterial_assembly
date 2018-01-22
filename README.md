@@ -45,7 +45,8 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 **bowtie2_dir**=/group/ag_abi/kneubert/soft/bowtie2-2.3.3.1-linux-x86_64   
 
 ### **2. Run the assembly pipeline**
-To run a single sample call the pipeline script with the sampleId, read directory and species as parameter
+To run a single sample call the pipeline script with the sample-ID, read directory and species as parameter:
+***assembly_pipeline_SPAdes.sh*** [sample-ID] [read direcory] [species]   
 ***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis'   
 
 It can be useful to write all outputs to a log file:   
