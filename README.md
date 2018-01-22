@@ -1,11 +1,18 @@
 # bacterial_assembly
 Assembly pipeline for baterial isolates using SPAdes
 
+## Installation
+Download the zip file or clone it with  <br />
+git clone https://github.com/kneubert/assembly_pipeline SRC_PATH/assembly_pipeline <br />
+
+Put the pipeline in your PATH, e.g. <br />
+export PATH=SRC_PATH/assembly_pipeline <br />
+
 ## Example run
-First check, if all the programs under 'Prerequisites' are installed in your path.
+First check, if all the programs under **'Prerequisites'** are installed in your path.
 
 ### **1. Configuration**
-As a first step create a folder e.g. 'my_project' somewhere in your working directory and create the configuration file 'parameter.cfg' in this directory:
+As a first step create a folder e.g. 'my_project' somewhere in your working directory and create the configuration file **'parameter.cfg'** in this directory:
 mkdir my_project; cd my_project
 
 The configuration files looks can look like this:
@@ -32,13 +39,13 @@ The configuration files looks can look like this:
 \# Bowtie2 directory <br />
 **bowtie2_dir**=/group/ag_abi/kneubert/soft/bowtie2-2.3.3.1-linux-x86_64 <br />
 
-
+### **2. Run the assembly pipeline**
 To run a single sample call the pipeline script with the sampleId, read directory and species as parameter
 assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 
 It is useful to write all outputs to a log file:
 ***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log <br />
 
-To run multiple samples, just create a bash script file like '**jobs**' and source it:
+To run multiple samples, just create a bash script file like '**jobs**' and source it: <br />
 ***assembly_pipeline_SPAdes.sh*** 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log <br />
 ***assembly_pipeline_SPAdes.sh*** 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log <br />
 ***assembly_pipeline_SPAdes.sh*** FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log <br />
