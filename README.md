@@ -60,8 +60,8 @@ To run multiple samples, just create a bash script file like '**jobs**' and sour
 source **jobs**   
 
 ***mulitQC***  
-After the runs have finished start the [multiQC script](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/mutltiqc.sh) in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC)
-This script should produce three folders **preQC**, **postQC_contis** and **postQC_scaffolds**, that contain the QC reports in HTML format for the raw data (FastQC, Kraken), the contig assembly and the scaffold assembly (QUAST, QualiMap, Prokka). The HTMPL-reports can be opened with any Browser that supports Javascript.
+After the runs have finished start the [multiQC script](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/multiqc.sh) in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC).  
+This script should produce three folders **preQC**, **postQC_contigs** and **postQC_scaffolds**, that contain the QC reports in HTML format for the raw data (FastQC, Kraken), the contig assembly and the scaffold assembly (QUAST, QualiMap, Prokka). The HTML-reports can be opened with any Browser that supports Javascript.
 
 ## Prerequisites
 The following programs need to be installed:
