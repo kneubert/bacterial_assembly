@@ -6,7 +6,7 @@ Download the zip file or clone it with  <br />
 git clone https://github.com/kneubert/bacterial_assembly SRC_PATH/assembly_pipeline <br />
 
 Put the pipeline in your PATH, e.g. <br />
-export PATH=SRC_PATH/assembly_pipeline <br />
+export PATH=$PATH:SRC_PATH/assembly_pipeline <br />
 
 ## Example run
 First check, if all the programs under **'Prerequisites'** are installed in your path.
