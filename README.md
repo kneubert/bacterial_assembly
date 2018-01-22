@@ -10,7 +10,7 @@ chmod a+x SRC_PATH/bacterial_assembly-master/\*.sh
 chmod a+x SRC_PATH/scripts/\*  
 
 Put the pipeline in your PATH, e.g.   
-export PATH=$PATH:SRC_PATH/assembly_pipeline   
+export PATH=$PATH:SRC_PATH/bacterial_assembly-master 
 
 ## Example run
 First check, if all the programs under **'Prerequisites'** are installed in your path.
