@@ -16,8 +16,8 @@ export PATH=$PATH:SRC_PATH/bacterial_assembly-master
 First check, if all the programs under **'Prerequisites'** are installed in your path.
 
 ### **1. Configuration**
-As a first step create a folder e.g. 'my_project' somewhere in your working directory and create the configuration file **'parameter.cfg'** in this directory (e.g. bacterial_assembly/example/parameter.cfg):
-mkdir my_project; cd my_project
+As a first step create a folder e.g. 'my_project' somewhere in your working directory and create the configuration file **[parameter.cfg](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/example/parameter.cfg)**    
+mkdir my_project; cd my_project  
 
 The configuration files looks can look like this:
 
