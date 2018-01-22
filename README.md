@@ -2,11 +2,15 @@
 Assembly pipeline for baterial isolates using SPAdes
 
 ## Installation
-Download the zip file or clone it with  <br />
-git clone https://github.com/kneubert/bacterial_assembly SRC_PATH/assembly_pipeline <br />
+Download the zip file or clone it with    
+git clone https://github.com/kneubert/bacterial_assembly SRC_PATH/assembly_pipeline  
 
-Put the pipeline in your PATH, e.g. <br />
-export PATH=$PATH:SRC_PATH/assembly_pipeline <br />
+All scripts need to be executable:  
+chmod a+x /group/ag_abi/kneubert/apipel/bacterial_assembly-master/\*.sh  
+chmod a+x /group/ag_abi/kneubert/apipel/bacterial_assembly-master/scripts/\*  
+
+Put the pipeline in your PATH, e.g.   
+export PATH=$PATH:SRC_PATH/assembly_pipeline   
 
 ## Example run
 First check, if all the programs under **'Prerequisites'** are installed in your path.
@@ -17,39 +21,39 @@ mkdir my_project; cd my_project
 
 The configuration files looks can look like this:
 
-\# [general parameter] <br />
-**THREADS**=32 <br />
+\# [general parameter]   
+**THREADS**=32   
 
-\# [QC & preprocessing] <br />
+\# [QC & preprocessing]   
 \# the location of the minikraken DB needs to be given 
 **minikrakenDB**=/group/ag_abi/kneubert/soft/Kraken/krakenDB/minikraken_20171019_8GB
 
-\# [Assembly] <br />
-**REFERENCES**=/group/ag_abi/kneubert/References <br />
-**PAGIT_HOME**=/group/ag_abi/kneubert/soft/PAGIT <br />
-**PILON_JAR**=/group/ag_abi/kneubert/soft/Pilon/pilon-1.22.jar <br />
+\# [Assembly]   
+**REFERENCES**=/group/ag_abi/kneubert/References   
+**PAGIT_HOME**=/group/ag_abi/kneubert/soft/PAGIT   
+**PILON_JAR**=/group/ag_abi/kneubert/soft/Pilon/pilon-1.22.jar   
 
-\# the minimum coverage of filtered contigs <br />
-**MIN_COV**=5 <br />
+\# the minimum coverage of filtered contigs   
+**MIN_COV**=5   
 
-\# the minimim length of filtered contigs <br />
-**MIN_LENGTH**=500 <br />
+\# the minimim length of filtered contigs   
+**MIN_LENGTH**=500   
 
-\# [Mapping] <br />
-\# Bowtie2 directory <br />
-**bowtie2_dir**=/group/ag_abi/kneubert/soft/bowtie2-2.3.3.1-linux-x86_64 <br />
+\# [Mapping]   
+\# Bowtie2 directory   
+**bowtie2_dir**=/group/ag_abi/kneubert/soft/bowtie2-2.3.3.1-linux-x86_64   
 
 ### **2. Run the assembly pipeline**
 To run a single sample call the pipeline script with the sampleId, read directory and species as parameter
 assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 
 It is useful to write all outputs to a log file:
-***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log <br />
+***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
 
-To run multiple samples, just create a bash script file like '**jobs**' and source it: <br />
-***assembly_pipeline_SPAdes.sh*** 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log <br />
-***assembly_pipeline_SPAdes.sh*** 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log <br />
-***assembly_pipeline_SPAdes.sh*** FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log <br />
-source **jobs** <br />
+To run multiple samples, just create a bash script file like '**jobs**' and source it:   
+***assembly_pipeline_SPAdes.sh*** 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
+***assembly_pipeline_SPAdes.sh*** 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log   
+***assembly_pipeline_SPAdes.sh*** FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log   
+source **jobs**   
 
 After the runs have finished start the multiQC script in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC)
 ***multiqc.sh***
