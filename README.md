@@ -9,8 +9,8 @@ git clone https://github.com/kneubert/bacterial_assembly
 
 All scripts need to be made executable:  
 ```sh
-chmod a+x bacterial_assembly/\*.sh  
-chmod a+x bacterial_assembly/scripts/\*  
+chmod a+x bacterial_assembly/*.sh  
+chmod a+x bacterial_assembly/scripts/*  
 ```
 
 Put the pipeline in your PATH, e.g. in your bashrc:  
@@ -80,12 +80,12 @@ source jobs
 ```
 It is important, that the naming of the fastq files matches one of the following naming schemes, whereis _1 and _2 or _R1 and _R2 are the flags for the forward and reverse reads. Runs for the same sample and different sequencing runs/lanes are merged. 
    
-1.) \[project-ID\]_**\[sample-ID\]**_\[library\]_\[sequencing run/lane\]_x_1/2.fastq.gz   
+1.) \[project-ID\]\_**\[sample-ID\]**\_\[library\]\_\[sequencing run/lane\]\_\[x\_1/\_2\].fastq.gz   
 for example:   
 NG-11942_08T0013_lib171814_5228_2_1.fastq.gz    
 NG-11942_08T0013_lib171814_5228_2_2.fastq.gz   
 
- 2.) **\[sample-ID\]**_xy_\[library\]_R1/R2_\[lane\]_\[run/date\].fastq.gz   
+ 2.) **\[sample-ID\]**\_xy\_\[library\]\_\[R1/R2\]\_\[lane\]\_\[run/date\].fastq.gz   
 for example:   
 ES-0001a_S07_L001_R1_001_20161019.fastq.gz   
 ES-0001a_S07_L001_R2_001_20161019.fastq.gz   
