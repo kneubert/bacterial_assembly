@@ -33,9 +33,9 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 \# [Assembly]   
 \# folder that contains Genbank Reference Assemblies, that must follow the file structure   
 \# assembly_accession e.g. GCA_000008985.1   
-\#       * fasta file e.g. GCA_000008985.1_ASM898v1_genomic.fna   
-\#       * gene annotation file e.g. GCA_000008985.1_ASM898v1_genomic.gff   
-\#       * genbank file e.g. GCA_000008985.1_ASM898v1_genomic.gbff   
+\# ___ fasta file e.g. GCA_000008985.1_ASM898v1_genomic.fna   
+\# ___ gene annotation file e.g. GCA_000008985.1_ASM898v1_genomic.gff   
+\# ___ genbank file e.g. GCA_000008985.1_ASM898v1_genomic.gbff   
 \# if 'REFERENCES' is not defined is the configuration file, Genbank references will be downloaded automatically for the given species   
 **REFERENCES**=/group/ag_abi/kneubert/References   
 \# PAGIT istallation directory   
