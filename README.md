@@ -60,23 +60,35 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 **bowtie2_dir**=/group/ag_abi/kneubert/soft/bowtie2-2.3.3.1-linux-x86_64   
 
 ### **2. Run the assembly pipeline**
-To run a single sample call the pipeline script with the sample-ID, read directory and species as parameter:
-```sh
-assembly_pipeline_SPAdes.sh  [sample-ID] [read direcory]  [species]   
+To run a single sample call the pipeline script with the sample-ID, read directory and species as parameters:
+***assembly_pipeline_SPAdes.sh***  **[sample-ID] [read directory]  [species]**   
+
+For example:
+```sh 
 assembly_pipeline_SPAdes.sh  16T0014 reads  'Francisella tularensis'   
 ```
 It can be useful to write all outputs to a log file:   
 ```sh
-assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
+assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014.log   
 ```
 To run multiple samples, just create a bash script file like '**jobs**' and source it:   
 ```sh
-assembly_pipeline_SPAdes.sh 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
-assembly_pipeline_SPAdes.sh 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log   
-assembly_pipeline_SPAdes.sh FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log   
-
+assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014.log   
+assembly_pipeline_SPAdes.sh 11T0315 reads 'Francisella tularensis' 2>&1 |tee -a 11T0315.log   
+assembly_pipeline_SPAdes.sh FSC237 reads 'Francisella tularensis' 2>&1 |tee -a FSC237.log   
 source jobs  
 ```
+It is important, that the name of the files follows one of the following naming schemes, whereis _1 and _2 or _R1 and _R2 are the flags for the forward and reverse reads. Runs for the same sample and different sequencing runs/lanes are merged.   
+1.) \[project-ID\]_**\[sample-ID\]**_\[library\]_\[sequencing run/lane\]_x_1/2.fastq.gz   
+for example:   
+NG-11942_08T0013_lib171814_5228_2_1.fastq.gz    
+NG-11942_08T0013_lib171814_5228_2_2.fastq.gz   
+
+ 2.) **\[sample-ID\]**_xy_\[library\]_R1/R2_\[lane\]_\[run/date\].fastq.gz   
+for example:   
+ES-0001a_S07_L001_R1_001_20161019.fastq.gz   
+ES-0001a_S07_L001_R2_001_20161019.fastq.gz   
+
 ***mulitQC***  
 After the runs have finished start the [multiQC script](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/multiqc.sh) in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC).  
 This script should produce three folders **preQC**, **postQC_contigs** and **postQC_scaffolds**, that contain the QC reports in HTML format for the raw data (FastQC, Kraken), the contig assembly and the scaffold assembly (QUAST, QualiMap, Prokka). The HTML-reports can be opened with any Browser that supports Javascript.
