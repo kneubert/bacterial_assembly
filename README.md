@@ -3,11 +3,11 @@ Assembly pipeline for baterial isolates using SPAdes
 
 ## Installation
 Download the zip file or clone it with    
-git clone https://github.com/kneubert/bacterial_assembly SRC_PATH/bacterial_assembly-master  
+git clone https://github.com/kneubert/bacterial_assembly
 
 All scripts need to be executable:  
-chmod a+x SRC_PATH/bacterial_assembly-master/\*.sh  
-chmod a+x SRC_PATH/scripts/\*  
+chmod a+x bacterial_assembly/\*.sh  
+chmod a+x bacterial_assembly/scripts/\*  
 
 Put the pipeline in your PATH, e.g.   
 export PATH=$PATH:SRC_PATH/bacterial_assembly-master 
