@@ -36,7 +36,7 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 \# ___ **fasta file** e.g. GCA_000008985.1_ASM898v1_genomic.fna   
 \# ___ **gene annotation file** e.g. GCA_000008985.1_ASM898v1_genomic.gff   
 \# ___ **genbank file** e.g. GCA_000008985.1_ASM898v1_genomic.gbff   
-\# if 'REFERENCES' is not defined is the configuration file, Genbank references will be downloaded automatically for the given species   
+\# if 'REFERENCES' is not defined, Genbank references will be downloaded automatically for the given species   
 **REFERENCES**=/group/ag_abi/kneubert/References 
 
 \# PAGIT istallation directory   
