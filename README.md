@@ -75,7 +75,7 @@ assembly_pipeline_SPAdes.sh 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |t
 assembly_pipeline_SPAdes.sh 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log   
 assembly_pipeline_SPAdes.sh FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log   
 
-source **jobs**   
+source jobs  
 ```
 ***mulitQC***  
 After the runs have finished start the [multiQC script](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/multiqc.sh) in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC).  
