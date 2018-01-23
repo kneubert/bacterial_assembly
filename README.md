@@ -23,6 +23,7 @@ mkdir my_project; cd my_project
 The configuration file can look like this: [parameter.cfg](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/example/parameter.cfg):
 
 \# [general parameter]   
+\# number of threads that can be used by the pipeline      
 **THREADS**=32   
 
 \# [QC & preprocessing]   
@@ -30,8 +31,16 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 **minikrakenDB**=/group/ag_abi/kneubert/soft/Kraken/krakenDB/minikraken_20171019_8GB
 
 \# [Assembly]   
+\# folder that contains Genbank Reference Assemblies, that must follow the file structure   
+\# assembly_accession e.g. GCA_000008985.1   
+\#       * fasta file e.g. GCA_000008985.1_ASM898v1_genomic.fna   
+\#       * gene annotation file e.g. GCA_000008985.1_ASM898v1_genomic.gff   
+\#       * genbank file e.g. GCA_000008985.1_ASM898v1_genomic.gbff   
+\# if 'REFERENCES' is not defined is the configuration file, Genbank references will be downloaded automatically for the given species   
 **REFERENCES**=/group/ag_abi/kneubert/References   
+\# PAGIT istallation directory   
 **PAGIT_HOME**=/group/ag_abi/kneubert/soft/PAGIT   
+\# Pilon executable jar file   
 **PILON_JAR**=/group/ag_abi/kneubert/soft/Pilon/pilon-1.22.jar   
 
 \# the minimum coverage of filtered contigs   
