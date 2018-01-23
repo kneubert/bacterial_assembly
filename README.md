@@ -2,14 +2,18 @@
 Assembly pipeline for baterial isolates using SPAdes
 
 ## Installation
-Download the zip file or clone it with    
+Download the zip file or clone it with   
+```sh
 git clone https://github.com/kneubert/bacterial_assembly
+```
 
-All scripts need to be executable:  
+All scripts need to be made executable:  
+```sh
 chmod a+x bacterial_assembly/\*.sh  
 chmod a+x bacterial_assembly/scripts/\*  
+```
 
-Put the pipeline in your PATH, e.g.   
+Put the pipeline in your PATH, e.g. in your bashrc:  
 export PATH=$PATH:SRC_PATH/bacterial_assembly-master 
 
 ## Example run
@@ -17,9 +21,9 @@ First check, if all the programs under **'Prerequisites'** are installed in your
 
 ### **1. Configuration**
 As a first step create a folder e.g. 'my_project' somewhere in your working directory and create the configuration file **'parameter.cfg'**   
-
+```sh
 mkdir my_project; cd my_project  
-
+```
 The configuration file can look like this: [parameter.cfg](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/example/parameter.cfg):
 
 \# [general parameter]   
@@ -57,19 +61,22 @@ The configuration file can look like this: [parameter.cfg](https://raw.githubuse
 
 ### **2. Run the assembly pipeline**
 To run a single sample call the pipeline script with the sample-ID, read directory and species as parameter:
-***assembly_pipeline_SPAdes.sh***  [sample-ID] [read direcory]  [species]   
-***assembly_pipeline_SPAdes.sh***  16T0014 reads  'Francisella tularensis'   
-
+```sh
+assembly_pipeline_SPAdes.sh  [sample-ID] [read direcory]  [species]   
+assembly_pipeline_SPAdes.sh  16T0014 reads  'Francisella tularensis'   
+```
 It can be useful to write all outputs to a log file:   
-***assembly_pipeline_SPAdes.sh*** 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
-
+```sh
+assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
+```
 To run multiple samples, just create a bash script file like '**jobs**' and source it:   
-***assembly_pipeline_SPAdes.sh*** 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
-***assembly_pipeline_SPAdes.sh*** 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log   
-***assembly_pipeline_SPAdes.sh*** FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log   
+```sh
+assembly_pipeline_SPAdes.sh 16T0014-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 16T0014-sub1M.log   
+assembly_pipeline_SPAdes.sh 11T0315-sub1M reads 'Francisella tularensis' 2>&1 |tee -a 11T0315-sub1M.log   
+assembly_pipeline_SPAdes.sh FSC237-sub1M reads 'Francisella tularensis' 2>&1 |tee -a FSC237-sub1M.log   
 
 source **jobs**   
-
+```
 ***mulitQC***  
 After the runs have finished start the [multiQC script](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/multiqc.sh) in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC).  
 This script should produce three folders **preQC**, **postQC_contigs** and **postQC_scaffolds**, that contain the QC reports in HTML format for the raw data (FastQC, Kraken), the contig assembly and the scaffold assembly (QUAST, QualiMap, Prokka). The HTML-reports can be opened with any Browser that supports Javascript.
