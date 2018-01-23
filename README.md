@@ -78,7 +78,8 @@ assembly_pipeline_SPAdes.sh 11T0315 reads 'Francisella tularensis' 2>&1 |tee -a 
 assembly_pipeline_SPAdes.sh FSC237 reads 'Francisella tularensis' 2>&1 |tee -a FSC237.log   
 source jobs  
 ```
-It is important, that the name of the files follows one of the following naming schemes, whereis _1 and _2 or _R1 and _R2 are the flags for the forward and reverse reads. Runs for the same sample and different sequencing runs/lanes are merged.   
+It is important, that the naming of the fastq files matches one of the following naming schemes, whereis _1 and _2 or _R1 and _R2 are the flags for the forward and reverse reads. Runs for the same sample and different sequencing runs/lanes are merged. 
+   
 1.) \[project-ID\]_**\[sample-ID\]**_\[library\]_\[sequencing run/lane\]_x_1/2.fastq.gz   
 for example:   
 NG-11942_08T0013_lib171814_5228_2_1.fastq.gz    
