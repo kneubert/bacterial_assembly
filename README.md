@@ -90,7 +90,7 @@ for example:
 ES-0001a_S07_L001_R1_001_20161019.fastq.gz   
 ES-0001a_S07_L001_R2_001_20161019.fastq.gz   
 
-***mulitQC***  
+### **3. Summarize results for quality metrics using mulitQC**  
 After the runs have finished start the [multiQC script](https://raw.githubusercontent.com/kneubert/bacterial_assembly/master/multiqc.sh) in the project directory to summarize QC statistics before (preQC) and after the assembly (postQC).  
 This script should produce three folders **preQC**, **postQC_contigs** and **postQC_scaffolds**, that contain the QC reports in HTML format for the raw data (FastQC, Kraken), the contig assembly and the scaffold assembly (QUAST, QualiMap, Prokka). The HTML-reports can be opened with any Browser that supports Javascript.
 
