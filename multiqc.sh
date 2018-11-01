@@ -13,8 +13,8 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 
 # preQC (FastQC, minikraken)
-$DIR/scripts/run_kraken_map.sh mini_kraken mini_kraken_summary
-multiqc -n preQC -f -o preQC -c $DIR/configs/multiqc.config fastqc mini_kraken_summary
+$DIR/scripts/kraken_summary.py --reports mini_kraken/*report.txt --log10 --species_table mini_kraken/kraken_species_map_report_mqc.txt --genus_table mini_kraken/kraken_genus_map_report_mqc.txt
+multiqc -n preQC -f -o preQC -c $DIR/configs/multiqc.config fastqc mini_kraken
 
 # postQC (QUAST, qualimap, Prokka)
 multiqc -n postQC_contigs -f -o postQC_contigs -c $DIR/configs/multiqc.config QUAST_contigs qualimap Prokka_contigs
