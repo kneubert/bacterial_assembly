@@ -71,7 +71,7 @@ It can be useful to write all outputs to a log file:
 ```sh
 assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014.log   
 ```
-To run multiple samples, just create a bash script file like '**jobs**' and source it:   
+To run multiple samples, just create a bash script file e.g. '**jobs**' that contains multiple runs and source it:   
 ```sh
 assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014.log   
 assembly_pipeline_SPAdes.sh 11T0315 reads 'Francisella tularensis' 2>&1 |tee -a 11T0315.log   
