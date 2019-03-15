@@ -75,8 +75,10 @@ To run multiple samples, just create a bash script file like '**jobs**' and sour
 ```sh
 assembly_pipeline_SPAdes.sh 16T0014 reads 'Francisella tularensis' 2>&1 |tee -a 16T0014.log   
 assembly_pipeline_SPAdes.sh 11T0315 reads 'Francisella tularensis' 2>&1 |tee -a 11T0315.log   
-assembly_pipeline_SPAdes.sh FSC237 reads 'Francisella tularensis' 2>&1 |tee -a FSC237.log   
-source jobs  
+assembly_pipeline_SPAdes.sh FSC237 reads 'Francisella tularensis' 2>&1 |tee -a FSC237.log    
+```
+```sh
+source jobs 
 ```
 It is important, that the naming of the fastq files matches one of the following naming schemes, whereis _1 and _2 or _R1 and _R2 are the flags for the forward and reverse reads. Runs for the same sample and different sequencing runs/lanes are merged. 
    
