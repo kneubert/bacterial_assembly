@@ -487,9 +487,9 @@ then
             genus=${stringarray[0]}
             species=${stringarray[1]}
             # use genus for annotation if available
-            prokka $contig_assembly --outdir $Prokka_dir_contigs --prefix $ES --genus "$genus" --species "$species" --strain $ES --kingdom 'Bacteria' --usegenus --force --cpus $THREADS
+            prokka $contig_assembly --outdir $Prokka_dir_contigs --prefix $ES --genus "$genus" --species "$species" --strain $ES --kingdom 'Bacteria' --usegenus --force --cpus $THREADS --compliant
         else
-            prokka $contig_assembly --outdir $Prokka_dir_contigs --prefix $ES --kingdom 'Bacteria' --strain $ES --force --cpus $THREADS
+            prokka $contig_assembly --outdir $Prokka_dir_contigs --prefix $ES --kingdom 'Bacteria' --strain $ES --force --cpus $THREADS --compliant
     fi
 fi
 echo "------------------------------------"
