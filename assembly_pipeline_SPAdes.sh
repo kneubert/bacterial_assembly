@@ -204,7 +204,7 @@ if [[ ! -e flexbar ]]; then mkdir flexbar; fi
 
 if [[ ! -e flexbar/${ES}.ec.fastq ]];
 then
- flexbar --reads $FQ/${base1}.fastq --reads2 $FQ/${base2}.fastq --threads $THREADS --adapter-min-overlap 4 --adapters $DIR/configs/adapter.fasta --min-read-length 35 --adapter-trim-end ANY -f i1.8 -q 25 -i --target flexbar/${ES}.ec >flexbar/${ES}.ec.fastq
+ flexbar --reads $FQ/${base1}.fastq --reads2 $FQ/${base2}.fastq --threads $THREADS --adapter-min-overlap 4 --adapters $DIR/configs/adapter.fasta --min-read-length 35 --adapter-trim-end ANY -f i1.8 -q 25 -1 >flexbar/${ES}.ec.fastq
 fi
 
 echo "------------------------------------"
